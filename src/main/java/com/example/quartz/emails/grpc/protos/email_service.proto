@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.example.quartz.emails.grpc.generated;
+
+option java_multiple_files = true;
+option java_package = "com.example.quartz.emails.grpc.generated";
+
+service EmailService {
+  rpc SendNow (EmailRequest) returns (JobResponse);
+  rpc SendLater (EmailLaterRequest) returns (JobResponse);
+}
+
+message EmailRequest {
+  string email_address = 1;
+  string sub = 2;
+  string body = 3;
+}
+
+message EmailLaterRequest {
+  string email_address = 1;
+  string sub = 2;
+  string body = 3;
+  string cron_expression = 4;
+}
+
+message JobResponse {
+  bool status = 1;
+  string message = 2;
+}
