@@ -17,7 +17,7 @@ public class QuartzApplication {
 		Map<String, Object> defaultProps = new HashMap<>();
 		defaultProps.put("spring.config.location", "file:/home/abhilash/Desktop/learning/learn-java/microservices/quartz-microservice/src/main/resources/application.properties");
 		app.setDefaultProperties(defaultProps);
-		System.out.println(app.getSources());
+		System.out.println(defaultProps);
 		app.run(args);
 	}
 
